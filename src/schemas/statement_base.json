@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "statement_base",
+    "type": "object",
+    "required": ["actor", "verb", "object"],
+    "additionalProperties": false,
+    "properties": {
+        "actor": {
+            "oneOf": [
+                {"$ref": "agent"},
+                {"$ref": "group"}
+            ]
+        },
+        "verb": {"$ref": "verb"},
+        "object": {"$ref": "statement_object"}
+    }
+}
